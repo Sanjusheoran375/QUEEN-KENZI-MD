@@ -19,11 +19,11 @@ const url = data.url
 let dese = ` 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 SONG DOWNLOADER 🧚  
 
 
-title: ${data.title}
-description: {data.discription}
-time: ${data.timestamp}
-ago: ${data.ago}
-views: ${data.views}
+ㄒ丨ㄒㄥ乇: ${data.title}
+ᗪ乇丂匚尺丨卩ㄒ丨ㄖ几: {data.discription}
+ㄒ丨爪乇: ${data.timestamp}
+卂Ꮆㄖ: ${data.ago}
+ᐯ丨乇山丂: ${data.views}
 
 > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ •
 `
@@ -67,11 +67,11 @@ const url = data.url
 let dese = ` 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 VIDEO DOWNLOADER 🌟  
 
 
-title: ${data.title}
-description: {data.discription}
-time: ${data.timestamp}
-ago: ${data.ago}
-views: ${data.views}
+ㄒ丨ㄒㄥ乇: ${data.title}
+ᗪ乇丂匚尺丨卩ㄒ丨ㄖ几: {data.discription}
+ㄒ丨爪乇: ${data.timestamp}
+卂Ꮆㄖ: ${data.ago}
+ᐯ丨乇山丂: ${data.views}
 
 > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ •
 `
