@@ -1,96 +1,100 @@
 const {cmd , commands} = require('../command')
-const fg = require (`api-dylux`)
-const yts = tequire (`yt-search`)
+const fg = require('api-dylux')
+const yts = require('yt-search')
 
 cmd({
     pattern: "song",
-    desc: "Download songs",
-    category: "download ",
+    react: "🎵",
+    desc: "downlod song",
+    category: "downlod",
     filename: __filename
-    
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!p) return reply ("please give me url or titel")
+
+if(!q) return reply("❌Please give me url or titel")
 const search = await yts(q)
-const data = search.videos[o];
-const url = data.url 
+const deta = search.videos[0];
+const url = deta.url 
 
-let dese = ` 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 SONG DOWNLOADER 🧚  
+let desc= `
+*•.¸♡ 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 AUDIO-DOWNLOADER🎶 ♡¸.•*
+|__________________________
+| 🎠title : ${deta.title}
+| 🎠description : ${deta.description}
+| 🎠time : ${deta.timestamp}
+| 🎠ago : ${deta.ago}
+| 🎠views : ${deta.views}
+|__________________________
 
+POWERED by *⚡ DARK NEON CYBERS 🤍*
 
-ㄒ丨ㄒㄥ乇: ${data.title}
-ᗪ乇丂匚尺丨卩ㄒ丨ㄖ几: {data.discription}
-ㄒ丨爪乇: ${data.timestamp}
-卂Ꮆㄖ: ${data.ago}
-ᐯ丨乇山丂: ${data.views}
-
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ •
 `
-await conn.sendMessage (from,{image:{url: data.thumbnail},caption:desc}{quoted:mek}),
-    // download audio
 
+await conn.sendMessage(from,{image :{ url: deta.thumbnail},caption:desc},{quoted:mek});
+
+//downlod audio+ document
 
 let down = await fg.yta(url)
 let downloadUrl = down.dl_url
 
-// send audio + document message
-await conn.sendMessage (form{audio:{url:downloadUrl}mimetype: "audio/mpeg",{quoted:mek});
-await conn.sendMessage (form{document:{url:downloadUrl}mimetype: "audio/mpeg",fileName:data.title + "mp3",caption:"QUEEN KENZI AUDIO DOWNLOAD...🧚"},{quoted:mek});
+//send audio message 
+await conn.sendMessage(from,{audio:{url:downloadUrl},mimetype:"audio/mpeg",caption :"*©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ*"},{quoted:mek})
+await conn.sendMessage(from,{document:{url:downloadUrl},mimetype:"audio/mpeg",fileName:deta.title + ".mp3" ,caption :"*©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ*"},{quoted:mek})
 
+  
 
-                             
-
-                            
-}catch (e) {
+}catch(e){
 console.log(e)
 reply(`${e}`)
 }
 })
 
-//============video_dl===============
+//========video dl=======
 
 cmd({
     pattern: "video",
-    desc: "Download videos",
-    category: "download ",
+    react: "🎬",
+    desc: "downlod video",
+    category: "downlod",
     filename: __filename
-    
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!p) return reply ("please give me url or titel")
+
+if(!q) return reply("❌Please give me url or title")
 const search = await yts(q)
-const data = search.videos[o];
-const url = data.url 
+const deta = search.videos[0];
+const url = deta.url 
 
-let dese = ` 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 VIDEO DOWNLOADER 🌟  
+let desc= `
+*•.¸♡ 💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍 VIDEO-DOWNLOADER📽️ ♡¸.•*
+|__________________________
+| 🎠title : ${deta.title}
+| 🎠description : ${deta.description}
+| 🎠time : ${deta.timestamp}
+| 🎠ago : ${deta.ago}
+| 🎠views : ${deta.views}
+|__________________________
 
+POWERED by *⚡ DARK NEON CYBERS 🤍*
 
-ㄒ丨ㄒㄥ乇: ${data.title}
-ᗪ乇丂匚尺丨卩ㄒ丨ㄖ几: {data.discription}
-ㄒ丨爪乇: ${data.timestamp}
-卂Ꮆㄖ: ${data.ago}
-ᐯ丨乇山丂: ${data.views}
-
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ •
 `
-await conn.sendMessage (from,{image:{url: data.thumbnail},caption:desc}{quoted:mek}),
-    // download video
 
+await conn.sendMessage(from,{image :{ url: deta.thumbnail},caption:desc},{quoted:mek});
+
+//downlod video + document 
 
 let down = await fg.ytv(url)
 let downloadUrl = down.dl_url
 
-// send vudeo + document message
-await conn.sendMessage (form{video:{url:downloadUrl}mimetype: {"video/mp4"},{quoted:mek});
-await conn.sendMessage (form{document:{url:downloadUrl}mimetype: "video/mp4",fileName:data.title + "mp4",caption:"QUEEN KENZI VIDEO DOWNLOAD...🧚"},{quoted:mek});
+//send video  message 
+await conn.sendMessage(from,{video:{url:downloadUrl},mimetype:"video/mp4",caption :"*©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ*"},{quoted:mek})
+await conn.sendMessage(from,{document:{url:downloadUrl},mimetype:"video/mp4",fileName:deta.title + ".mp4",caption :"*©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴀʀᴋɴᴇᴏɴᴄʏʙᴇʀꜱ*"},{quoted:mek})
 
+  
 
-                             
-
-                            
-}catch (e) {
+}catch(e){
 console.log(e)
 reply(`${e}`)
 }
